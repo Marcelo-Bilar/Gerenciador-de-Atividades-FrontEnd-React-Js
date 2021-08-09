@@ -35,6 +35,8 @@ export const Login = props => {
                 console.log(e);
                 if(e?.response?.data?.erro){
                     setmsgErro(e.response.data.erro);
+                } else {
+                    setmsgErro('Não foi possível efetuar o login, fale com o administrador');
                 }
             }
             setLoading(false);
@@ -68,7 +70,7 @@ export const Login = props => {
                     setValue={setSenha}
                 />
 
-                <button onClick={executaLogin} disabled={isLoading}>{isLoading === true ? '...Carregando' : 'Entrar'} </button>
+                <button onClick={executaLogin} disabled={isLoading}>{isLoading === true ? 'Carregando' : 'Entrar'} </button>
             </form>
         </div>
     );
