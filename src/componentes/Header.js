@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/icones/devaria-logo.svg';
+import logo from '../assets/icones/logo.svg';
 import sair from '../assets/icones/exit.svg';
 import sairdesktop from '../assets/icones/exit-desktop.svg';
 

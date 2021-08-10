@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <div className='container-footer'>
             <button><img src={Adicionar} alt='adicionar tarefa'/>Adicionar tarefa</button>   
-            <span>© Copyright {new Date().getFullYear()} Devaria. Todos os direitos reservados.</span>
+            <span>© Copyright {new Date().getFullYear()} Billar. Todos os direitos reservados.</span>
         </div>
     )
 }

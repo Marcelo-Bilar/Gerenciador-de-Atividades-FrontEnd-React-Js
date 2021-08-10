@@ -81,6 +81,7 @@
 
                 input, select {
                     border-color: $primaryColor;
+                    max-width: 155.8px;
                 }
 
                 .line{
@@ -92,6 +93,15 @@
                     margin-left: 15px;
                 }
             }
+        }
+    }
+    @media screen and (min-width:1052px) {
+        .title{
+            .form{
+                input, select {
+                    max-width: none;
+                }
+            }   
         }
     }
 }

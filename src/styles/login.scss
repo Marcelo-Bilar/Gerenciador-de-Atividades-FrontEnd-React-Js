@@ -5,7 +5,7 @@
         display: block;
         margin: auto;
         margin-bottom: 30px;
-        width: 196.8px;
+        width: 250px;
     }
 
     p {
@@ -42,10 +42,9 @@
             align-items: center;
             letter-spacing: 0.01em;
             color: $primaryColor;
-            width: 240px;
+            width: 250px;
             border-radius: 0px;
             padding-bottom: 7px;
-
             border-top-width: 0px;
             border-left-width: 0px;
             border-right-width: 0px;
@@ -76,10 +75,12 @@
     @media screen and (min-width:992px) {
         display: flex;
         flex-direction: row;
+        margin: 0px 5% 0px 5%;
 
         .logo{
-            width: 520px;
-            margin: 0px;
+            width: 400px;
+            margin: 0px 5% 0px 0px;
+            
         }
 
         form{
@@ -88,11 +89,10 @@
             border-width: 0.1em;
             border-radius: 32px;
             padding: 80px 40px;
-            margin-left: 10%;
 
             .input{
                 input{
-                    width: 343px;
+                    width: 350px;
                 }
                 img {
                     width: 20px;
