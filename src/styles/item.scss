@@ -60,5 +60,22 @@
                 }
             }
         }
+
+        &.nao-ativo {
+            cursor: pointer;
+
+            &:hover{
+                border-color: $mediumGreyColor;
+                border-style: solid;
+                border-width: 1px;
+                
+                p {
+                    color: $darkGreyColor;
+                }
+                span {
+                    color: $darkGreyColor;
+                }
+            }
+        }
     }
 }
