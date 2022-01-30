@@ -21,7 +21,7 @@ export const Listagem = props => {
         setIdTarefa(tarefa.id);
         setNomeTarefa(tarefa.nome);
         setDataPrevistaTarefa(moment(tarefa.dataPrevistaConclusao).format('yyyy-MM-DD'));
-        setDataConclusao(tarefa.dataConclusao);
+        setDataConclusao(moment(tarefa.dataConclusao).format('yyyy-MM-DD'));
         setShowModal(true);
     }
 

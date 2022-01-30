@@ -1,8 +1,9 @@
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import './styles/app.scss';
 import {Login} from './pages/Login';
 import {Home} from './pages/Home';
 import {useState} from 'react';
+import { Cadastro } from './pages/Cadastro';
 
 function App() {
 
@@ -11,12 +12,15 @@ function App() {
   return (
     <Switch>
       {!accessToken ?
-        <Route path="*">
+      <BrowserRouter>
+        <Route path="/login" >
           <Login setAccessToken={setAccessToken} />
         </Route>
+        <Route path="/cadastro" component={Cadastro} exact={true}/>
+        </BrowserRouter>
       :
       <Route path="*">
-          <Home setAccessToken={setAccessToken} />
+            <Home setAccessToken={setAccessToken} />
         </Route>
       }
     </Switch>

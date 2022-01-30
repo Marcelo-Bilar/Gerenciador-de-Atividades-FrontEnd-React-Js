@@ -5,38 +5,40 @@ import lock from '../assets/icones/lock.svg';
 import { Input } from '../componentes/Input';
 import { executaRequisicao } from '../services/api';
 
-export const Login = props => {
-
-    const [login, setLogin] = useState('');
+export const Cadastro = props => {
+    const [nome, setnome] = useState('');
+    const [email, setemail] = useState('');
     const [senha, setSenha] = useState('');
     const [msgErro, setmsgErro] = useState('');
+    const [msgSucesso, setmsgSucesso] = useState('');
     const [isLoading, setLoading] = useState(false);
 
 
-    const executaLogin = async evento => {
+    const executaCadastro = async evento => {
         try{
             evento.preventDefault(); 
             setLoading(true);
             setmsgErro('');
         
             const body = {
-                login,
+                nome,
+                email,
                 senha
             }
         
-            const resultado = await executaRequisicao('login', 'post', body);
-            if(resultado?.data?.token){
-                localStorage.setItem('accessToken', resultado.data.token);
-                localStorage.setItem('usuarioNome', resultado.data.nome);
-                localStorage.setItem('usuarioEmail', resultado.data.email);
-                props.setAccessToken(resultado.data.token);
+            const resultado = await executaRequisicao('usuario', 'post', body);
+            // O que o cadastro devolve
+            // Por enquanto vou deixar desse jeito
+            if(resultado){
+                setmsgSucesso('Usuário cadastrado com sucesso! ');
             }
+
             } catch(e){
                 console.log(e);
                 if(e?.response?.data?.erro){
                     setmsgErro(e.response.data.erro);
                 } else {
-                    setmsgErro('Não foi possível efetuar o login, fale com o administrador');
+                    setmsgErro('Não foi possível efetuar o cadastro, fale com o administrador');
                 }
             }
             setLoading(false);
@@ -50,16 +52,25 @@ export const Login = props => {
                 className='logo'
             />
             <form>
-                <h1>Entrar</h1>
+                <h1>Cadastrar</h1>
                 {msgErro && <p>{msgErro}</p>}
                 <Input 
                     srcImg={mail}
                     altImg={'Icone email'}
                     inputType='text'
-                    inputName='login'
+                    inputName='nome'
+                    inputPlaceholder='Informe seu nome'
+                    value={nome}
+                    setValue={setnome}
+                />
+                <Input 
+                    srcImg={mail}
+                    altImg={'Icone email'}
+                    inputType='text'
+                    inputName='email'
                     inputPlaceholder='Informe seu email'
-                    value={login}
-                    setValue={setLogin}
+                    value={email}
+                    setValue={setemail}
                 />
                 <Input 
                     srcImg={lock}
@@ -71,8 +82,9 @@ export const Login = props => {
                     setValue={setSenha}
                 />
 
-                <button onClick={executaLogin} disabled={isLoading}>{isLoading === true ? 'Carregando' : 'Entrar'} </button>
-                <a className='link' href="http://localhost:3000/cadastro">Não é cadastrado? Clique aqui</a>
+                <button onClick={executaCadastro} disabled={isLoading}>{isLoading === true ? 'Carregando' : 'Cadastrar'} </button>
+                {msgSucesso && <p className='sucesso'>{msgSucesso}</p>}
+                <a className='link' href="http://localhost:3000/login">Já é cadastrado? Clique aqui</a>
             </form>
         </div>
     );

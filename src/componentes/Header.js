@@ -13,7 +13,7 @@ export const Header = props => {
     return(
         <div className="container-header">
             <img className="logo" src={logo} alt='Logo Devaria' /> 
-            <button onClick={showModal}><span>+</span>Adicionar tarefa</button>       
+            <button onClick={showModal}><span>+</span>Adicionar tarefa</button>   
             <div className="mobile">
                 <span>Olá, {primeiroNome}</span>
                 <img className="sair" src={sair} alt='Deslogar' onClick={props.sair}/>
@@ -24,4 +24,5 @@ export const Header = props => {
             </div>
         </div>
     )
+
 }
