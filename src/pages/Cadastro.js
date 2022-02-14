@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/icones/logo.svg';
 import mail from '../assets/icones/mail.svg';
 import lock from '../assets/icones/lock.svg';
@@ -84,7 +85,7 @@ export const Cadastro = props => {
 
                 <button onClick={executaCadastro} disabled={isLoading}>{isLoading === true ? 'Carregando' : 'Cadastrar'} </button>
                 {msgSucesso && <p className='sucesso'>{msgSucesso}</p>}
-                <a className='link' href="http://localhost:3000/login">Já é cadastrado? Clique aqui</a>
+                <Link className='link' to="/">Já é cadastrado? Clique aqui</Link>
             </form>
         </div>
     );

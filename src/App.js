@@ -13,11 +13,11 @@ function App() {
     <Switch>
       {!accessToken ?
       <BrowserRouter>
-        <Route path="/login" >
+        <Route path="/" exact={true}>
           <Login setAccessToken={setAccessToken} />
         </Route>
-        <Route path="/cadastro" component={Cadastro} exact={true}/>
-        </BrowserRouter>
+        <Route path="/cadastro" component={Cadastro}/>
+      </BrowserRouter>
       :
       <Route path="*">
             <Home setAccessToken={setAccessToken} />
