@@ -13,7 +13,7 @@ export const Cadastro = props => {
     const [msgErro, setmsgErro] = useState('');
     const [msgSucesso, setmsgSucesso] = useState('');
     const [isLoading, setLoading] = useState(false);
-
+    const [type, settype] = useState('password');
 
     const executaCadastro = async evento => {
         try{
@@ -43,6 +43,14 @@ export const Cadastro = props => {
                 }
             }
             setLoading(false);
+        }
+
+    const visuSenha = () => {
+            if(type === 'password'){
+                settype('text')
+            } else {
+                settype('password')
+            }
         }
 
     return(
@@ -76,12 +84,13 @@ export const Cadastro = props => {
                 <Input 
                     srcImg={lock}
                     altImg={'Icone senha'}
-                    inputType='password'
+                    inputType={type}
                     inputName='senha'
                     inputPlaceholder='Informe sua senha'
                     value={senha}
                     setValue={setSenha}
                 />
+                <img className="olho" src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" onClick={visuSenha}></img>
 
                 <button onClick={executaCadastro} disabled={isLoading}>{isLoading === true ? 'Carregando' : 'Cadastrar'} </button>
                 {msgSucesso && <p className='sucesso'>{msgSucesso}</p>}

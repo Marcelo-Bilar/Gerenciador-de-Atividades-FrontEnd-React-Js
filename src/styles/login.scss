@@ -25,6 +25,14 @@
         font-size: 17px;
     }
 
+    form .olho{
+        position: relative;
+        cursor: pointer;
+        width: 30px;
+        left: 110px;
+        top: -56px;
+    }
+
     .input {
         display: flex;
         flex-direction: row;
@@ -90,6 +98,9 @@
             border-radius: 32px;
             padding: 80px 40px;
 
+            .olho{
+                left: 170px;
+            }
             .input{
                 input{
                     width: 350px;

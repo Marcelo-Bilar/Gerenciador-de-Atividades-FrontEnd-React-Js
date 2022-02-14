@@ -12,7 +12,7 @@ export const Login = props => {
     const [senha, setSenha] = useState('');
     const [msgErro, setmsgErro] = useState('');
     const [isLoading, setLoading] = useState(false);
-
+    const [type, settype] = useState('password');
 
     const executaLogin = async evento => {
         try{
@@ -43,6 +43,15 @@ export const Login = props => {
             setLoading(false);
         }
 
+    const visuSenha = () => {
+        if(type === 'password'){
+            settype('text')
+        } else {
+            settype('password')
+        }
+    }
+
+
     return(
         <div className={'container-login '+'container-cadastro'}>
             <img 
@@ -65,12 +74,13 @@ export const Login = props => {
                 <Input 
                     srcImg={lock}
                     altImg={'Icone senha'}
-                    inputType='password'
+                    inputType={type}
                     inputName='senha'
                     inputPlaceholder='Informe sua senha'
                     value={senha}
                     setValue={setSenha}
                 />
+                <img className="olho" src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" onClick={visuSenha}></img>
 
                 <button onClick={executaLogin} disabled={isLoading}>{isLoading === true ? 'Carregando' : 'Entrar'} </button>
                 <Link className='link' to="/cadastro">Não é cadastrado? Clique aqui</Link> 
