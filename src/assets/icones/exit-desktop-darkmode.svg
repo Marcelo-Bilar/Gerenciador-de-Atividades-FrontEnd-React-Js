@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+	<title>exit-desktop-svg</title>
+	<defs>
+		<image  width="40" height="40" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAAXkn/z/yhtAAAAAJ0Uk5TAP9bkSK1AAAAOklEQVR4nGNg/P//fwMDO5B8wMAPJD8wyAPJHwz2QPIPQz2Q/Acl/4PAICWR3QlxOcQXEB9BfAf2KQB6Bbq7S1MTSAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: #f0f5ff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2 } 
+	</style>
+	<use id="Layer" href="#img1" x="0" y="0" />
+	<path id="Layer" class="s0" d="m26 25v2.5c0 0.7-0.3 1.3-0.7 1.8c-0.5 0.4-1.1 0.7-1.8 0.7h-12c-0.7 0-1.3-0.3-1.8-0.7c-0.4-0.5-0.7-1.1-0.7-1.8v-15c0-0.7 0.3-1.3 0.7-1.8c0.5-0.4 1.1-0.7 1.8-0.7h12c0.7 0 1.3 0.3 1.8 0.7c0.4 0.5 0.7 1.1 0.7 1.8v2.5" />
+	<path id="Layer" class="s0" d="m30 15l5 5l-5 5" />
+	<path id="Layer" class="s0" d="m17.9 20h17.1" />
+</svg>

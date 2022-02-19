@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
+import { ButtonTheme } from '../componentes/ButonTheme';
 import { Modal } from 'react-bootstrap';
 import { Header } from '../componentes/Header';
 import { Filtros } from '../componentes/Filtros';
@@ -81,46 +82,47 @@ export const Home = props => {
     }
 
     return (
-        <>
-            <Header showModal={() => setShowModal(true)} sair={sair}/>
-            <Filtros
-                periodoDe={periodoDe}
-                periodoAte={periodoAte}
-                status={status}
-                setPeriodoDe={setPeriodoDe}
-                setPeriodoAte={setPeriodoAte}
-                setStatus={setstatus}
-            />
-            <Listagem tarefas={tarefas} getTarefasComFiltro={getTarefasComFiltro}/>
-            <Footer showModal={() => setShowModal(true)}/>
-            <Modal show={showModal} onHide={() => setShowModal(false)} className="container-modal">
-                <Modal.Body>
-                    <p>Adicionar uma tarefa</p>
-                    {erro && <p className='error'>{erro} </p>}
-                    <input type='text' name='nome'
-                        placeholder='Nome da tarefa'
-                        className='col-12'
-                        value={nomeTarefa}
-                        onChange={evento => setNomeTarefa(evento.target.value)} />
-                    <input type='text' name='dataPrevisao'
-                        placeholder='Data de previsão de conclusão'
-                        className='col-12'
-                        value={dataPrevistaTarefa}
-                        onChange={evento => setDataPrevistaTarefa(evento.target.value)}
-                        onFocus={evento => evento.target.type = 'date'}
-                        onBlur={evento => dataPrevistaTarefa ? evento.target.type = 'date' : evento.target.type = 'text'} />
-                </Modal.Body>
-                <Modal.Footer>
-                    <div className='buttons col-12'>
-                        <button onClick={salvarTarefa}>Salvar</button>
-                        <span onClick={() => {
-                            setShowModal(false)
-                            setErro('')
-                            setNomeTarefa('')
-                            setDataPrevistaTarefa('')}}>Cancelar</span>
-                    </div>
-                </Modal.Footer>
-            </Modal>
-        </>
+            <>
+                <Header showModal={() => setShowModal(true)} sair={sair}/>
+                <Filtros
+                    periodoDe={periodoDe}
+                        periodoAte={periodoAte}
+                        status={status}
+                        setPeriodoDe={setPeriodoDe}
+                        setPeriodoAte={setPeriodoAte}
+                    setStatus={setstatus}/>
+                    
+                <Listagem tarefas={tarefas} getTarefasComFiltro={getTarefasComFiltro}/>
+                <Footer showModal={() => setShowModal(true)}/>
+                <Modal show={showModal} onHide={() => setShowModal(false)} className="container-modal">
+                        <Modal.Body>
+                            <p>Adicionar uma tarefa</p>
+                            {erro && <p className='error'>{erro} </p>}
+                            <input type='text' name='nome'
+                                placeholder='Nome da tarefa'
+                                className='col-12'
+                                value={nomeTarefa}
+                                onChange={evento => setNomeTarefa(evento.target.value)} />
+                            <input type='text' name='dataPrevisao'
+                                placeholder='Data de previsão de conclusão'
+                                className='col-12'
+                                value={dataPrevistaTarefa}
+                                onChange={evento => setDataPrevistaTarefa(evento.target.value)}
+                                onFocus={evento => evento.target.type = 'date'}
+                                onBlur={evento => dataPrevistaTarefa ? evento.target.type = 'date' : evento.target.type = 'text'} />
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <div className='buttons col-12'>
+                                <button onClick={salvarTarefa}>Salvar</button>
+                                <span onClick={() => {
+                                    setShowModal(false)
+                                    setErro('')
+                                    setNomeTarefa('')
+                                    setDataPrevistaTarefa('')}}>Cancelar</span>
+                            </div>
+                        </Modal.Footer>
+                </Modal>  
+            </>
     )
 }
+
